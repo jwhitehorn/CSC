@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Compiler\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Antlr4.Runtime.Standard" Version="4.9.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Lokad.ILPack">
+      <HintPath>..\..\ILPack\src\obj\Debug\netcoreapp2.1\Lokad.ILPack.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
