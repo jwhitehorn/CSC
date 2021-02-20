@@ -39,7 +39,8 @@ public partial class CSharpParser : Parser {
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
 		T__9=10, T__10=11, T__11=12, T__12=13, T__13=14, T__14=15, T__15=16, T__16=17, 
 		T__17=18, T__18=19, T__19=20, T__20=21, T__21=22, T__22=23, T__23=24, 
-		T__24=25, T__25=26, T__26=27, STRING=28, IDENTIFIER=29, NEWLINE=30, WS=31;
+		T__24=25, T__25=26, T__26=27, T__27=28, STRING=29, IDENTIFIER=30, NEWLINE=31, 
+		WS=32;
 	public const int
 		RULE_source_file = 0, RULE_root_expr = 1, RULE_using_statement = 2, RULE_namespace_declaration = 3, 
 		RULE_qualified_identifier = 4, RULE_namespace_body = 5, RULE_namespace_member_declaration = 6, 
@@ -60,14 +61,15 @@ public partial class CSharpParser : Parser {
 
 	private static readonly string[] _LiteralNames = {
 		null, "'using'", "';'", "'namespace'", "'.'", "'{'", "'}'", "'partial'", 
-		"'class'", "':'", "'TODO'", "'('", "')'", "','", "'string[]'", "'void'", 
-		"'new'", "'public'", "'protected'", "'internal'", "'private'", "'static'", 
-		"'virtual'", "'sealed'", "'override'", "'abstract'", "'extern'", "'async'"
+		"'class'", "':'", "'TODO'", "'('", "')'", "','", "'string[]'", "'object'", 
+		"'void'", "'new'", "'public'", "'protected'", "'internal'", "'private'", 
+		"'static'", "'virtual'", "'sealed'", "'override'", "'abstract'", "'extern'", 
+		"'async'"
 	};
 	private static readonly string[] _SymbolicNames = {
 		null, null, null, null, null, null, null, null, null, null, null, null, 
 		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, "STRING", "IDENTIFIER", "NEWLINE", "WS"
+		null, null, null, null, null, "STRING", "IDENTIFIER", "NEWLINE", "WS"
 	};
 	public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
 
@@ -416,7 +418,7 @@ public partial class CSharpParser : Parser {
 			State = 81;
 			ErrorHandler.Sync(this);
 			_la = TokenStream.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__6) | (1L << T__7) | (1L << T__15) | (1L << T__16) | (1L << T__17) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__22) | (1L << T__24))) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__6) | (1L << T__7) | (1L << T__16) | (1L << T__17) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__21) | (1L << T__23) | (1L << T__25))) != 0)) {
 				{
 				{
 				State = 78;
@@ -570,7 +572,7 @@ public partial class CSharpParser : Parser {
 			State = 93;
 			ErrorHandler.Sync(this);
 			_la = TokenStream.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__15) | (1L << T__16) | (1L << T__17) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__22) | (1L << T__24))) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__16) | (1L << T__17) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__21) | (1L << T__23) | (1L << T__25))) != 0)) {
 				{
 				{
 				State = 90;
@@ -709,7 +711,7 @@ public partial class CSharpParser : Parser {
 			State = 115;
 			ErrorHandler.Sync(this);
 			_la = TokenStream.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__6) | (1L << T__13) | (1L << T__14) | (1L << T__15) | (1L << T__16) | (1L << T__17) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__21) | (1L << T__22) | (1L << T__23) | (1L << T__24) | (1L << T__25) | (1L << T__26))) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__6) | (1L << T__13) | (1L << T__14) | (1L << T__15) | (1L << T__16) | (1L << T__17) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__21) | (1L << T__22) | (1L << T__23) | (1L << T__24) | (1L << T__25) | (1L << T__26) | (1L << T__27))) != 0)) {
 				{
 				{
 				State = 112;
@@ -1110,7 +1112,7 @@ public partial class CSharpParser : Parser {
 			State = 152;
 			ErrorHandler.Sync(this);
 			_la = TokenStream.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__15) | (1L << T__16) | (1L << T__17) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__21) | (1L << T__22) | (1L << T__23) | (1L << T__24) | (1L << T__25) | (1L << T__26))) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__16) | (1L << T__17) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__21) | (1L << T__22) | (1L << T__23) | (1L << T__24) | (1L << T__25) | (1L << T__26) | (1L << T__27))) != 0)) {
 				{
 				{
 				State = 149;
@@ -1140,7 +1142,7 @@ public partial class CSharpParser : Parser {
 			State = 162;
 			ErrorHandler.Sync(this);
 			_la = TokenStream.LA(1);
-			if (_la==T__13 || _la==T__14) {
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__13) | (1L << T__14) | (1L << T__15))) != 0)) {
 				{
 				State = 161;
 				formal_parameter_list();
@@ -1426,7 +1428,7 @@ public partial class CSharpParser : Parser {
 			{
 			State = 183;
 			_la = TokenStream.LA(1);
-			if ( !(_la==T__13 || _la==T__14) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__13) | (1L << T__14) | (1L << T__15))) != 0)) ) {
 			ErrorHandler.RecoverInline(this);
 			}
 			else {
@@ -1474,7 +1476,7 @@ public partial class CSharpParser : Parser {
 			{
 			State = 185;
 			_la = TokenStream.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__15) | (1L << T__16) | (1L << T__17) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__21) | (1L << T__22) | (1L << T__23) | (1L << T__24) | (1L << T__25) | (1L << T__26))) != 0)) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__16) | (1L << T__17) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__21) | (1L << T__22) | (1L << T__23) | (1L << T__24) | (1L << T__25) | (1L << T__26) | (1L << T__27))) != 0)) ) {
 			ErrorHandler.RecoverInline(this);
 			}
 			else {
@@ -1522,7 +1524,7 @@ public partial class CSharpParser : Parser {
 			{
 			State = 187;
 			_la = TokenStream.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__15) | (1L << T__16) | (1L << T__17) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__22) | (1L << T__24))) != 0)) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__16) | (1L << T__17) | (1L << T__18) | (1L << T__19) | (1L << T__20) | (1L << T__21) | (1L << T__23) | (1L << T__25))) != 0)) ) {
 			ErrorHandler.RecoverInline(this);
 			}
 			else {
@@ -1544,7 +1546,7 @@ public partial class CSharpParser : Parser {
 
 	private static char[] _serializedATN = {
 		'\x3', '\x608B', '\xA72A', '\x8133', '\xB9ED', '\x417C', '\x3BE7', '\x7786', 
-		'\x5964', '\x3', '!', '\xC0', '\x4', '\x2', '\t', '\x2', '\x4', '\x3', 
+		'\x5964', '\x3', '\"', '\xC0', '\x4', '\x2', '\t', '\x2', '\x4', '\x3', 
 		'\t', '\x3', '\x4', '\x4', '\t', '\x4', '\x4', '\x5', '\t', '\x5', '\x4', 
 		'\x6', '\t', '\x6', '\x4', '\a', '\t', '\a', '\x4', '\b', '\t', '\b', 
 		'\x4', '\t', '\t', '\t', '\x4', '\n', '\t', '\n', '\x4', '\v', '\t', '\v', 
@@ -1586,8 +1588,8 @@ public partial class CSharpParser : Parser {
 		'\x2', '\x4', '\x6', '\b', '\n', '\f', '\xE', '\x10', '\x12', '\x14', 
 		'\x16', '\x18', '\x1A', '\x1C', '\x1E', ' ', '\"', '$', '&', '(', '*', 
 		',', '.', '\x30', '\x32', '\x34', '\x2', '\x5', '\x3', '\x2', '\x10', 
-		'\x11', '\x3', '\x2', '\x12', '\x1D', '\x5', '\x2', '\x12', '\x17', '\x19', 
-		'\x19', '\x1B', '\x1B', '\x2', '\xB6', '\x2', '\x37', '\x3', '\x2', '\x2', 
+		'\x12', '\x3', '\x2', '\x13', '\x1E', '\x5', '\x2', '\x13', '\x18', '\x1A', 
+		'\x1A', '\x1C', '\x1C', '\x2', '\xB6', '\x2', '\x37', '\x3', '\x2', '\x2', 
 		'\x2', '\x4', '=', '\x3', '\x2', '\x2', '\x2', '\x6', '?', '\x3', '\x2', 
 		'\x2', '\x2', '\b', '\x43', '\x3', '\x2', '\x2', '\x2', '\n', 'G', '\x3', 
 		'\x2', '\x2', '\x2', '\f', 'O', '\x3', '\x2', '\x2', '\x2', '\xE', 'X', 
@@ -1613,8 +1615,8 @@ public partial class CSharpParser : Parser {
 		'\x2', '\x42', '\a', '\x3', '\x2', '\x2', '\x2', '\x43', '\x44', '\a', 
 		'\x5', '\x2', '\x2', '\x44', '\x45', '\x5', '\n', '\x6', '\x2', '\x45', 
 		'\x46', '\x5', '\f', '\a', '\x2', '\x46', '\t', '\x3', '\x2', '\x2', '\x2', 
-		'G', 'L', '\a', '\x1F', '\x2', '\x2', 'H', 'I', '\a', '\x6', '\x2', '\x2', 
-		'I', 'K', '\a', '\x1F', '\x2', '\x2', 'J', 'H', '\x3', '\x2', '\x2', '\x2', 
+		'G', 'L', '\a', ' ', '\x2', '\x2', 'H', 'I', '\a', '\x6', '\x2', '\x2', 
+		'I', 'K', '\a', ' ', '\x2', '\x2', 'J', 'H', '\x3', '\x2', '\x2', '\x2', 
 		'K', 'N', '\x3', '\x2', '\x2', '\x2', 'L', 'J', '\x3', '\x2', '\x2', '\x2', 
 		'L', 'M', '\x3', '\x2', '\x2', '\x2', 'M', '\v', '\x3', '\x2', '\x2', 
 		'\x2', 'N', 'L', '\x3', '\x2', '\x2', '\x2', 'O', 'S', '\a', '\a', '\x2', 
@@ -1631,7 +1633,7 @@ public partial class CSharpParser : Parser {
 		'\x2', '\x61', '_', '\x3', '\x2', '\x2', '\x2', '\x62', '\x64', '\a', 
 		'\t', '\x2', '\x2', '\x63', '\x62', '\x3', '\x2', '\x2', '\x2', '\x63', 
 		'\x64', '\x3', '\x2', '\x2', '\x2', '\x64', '\x65', '\x3', '\x2', '\x2', 
-		'\x2', '\x65', '\x66', '\a', '\n', '\x2', '\x2', '\x66', 'h', '\a', '\x1F', 
+		'\x2', '\x65', '\x66', '\a', '\n', '\x2', '\x2', '\x66', 'h', '\a', ' ', 
 		'\x2', '\x2', 'g', 'i', '\x5', '\x14', '\v', '\x2', 'h', 'g', '\x3', '\x2', 
 		'\x2', '\x2', 'h', 'i', '\x3', '\x2', '\x2', '\x2', 'i', 'j', '\x3', '\x2', 
 		'\x2', '\x2', 'j', 'l', '\x5', '\x16', '\f', '\x2', 'k', 'm', '\a', '\x4', 
@@ -1659,7 +1661,7 @@ public partial class CSharpParser : Parser {
 		'\x2', '\x2', '\x2', '\x8D', '!', '\x3', '\x2', '\x2', '\x2', '\x8E', 
 		'\x96', '\a', '\x4', '\x2', '\x2', '\x8F', '\x90', '\x5', '\n', '\x6', 
 		'\x2', '\x90', '\x91', '\a', '\r', '\x2', '\x2', '\x91', '\x92', '\a', 
-		'\x1E', '\x2', '\x2', '\x92', '\x93', '\a', '\xE', '\x2', '\x2', '\x93', 
+		'\x1F', '\x2', '\x2', '\x92', '\x93', '\a', '\xE', '\x2', '\x2', '\x93', 
 		'\x94', '\a', '\x4', '\x2', '\x2', '\x94', '\x96', '\x3', '\x2', '\x2', 
 		'\x2', '\x95', '\x8E', '\x3', '\x2', '\x2', '\x2', '\x95', '\x8F', '\x3', 
 		'\x2', '\x2', '\x2', '\x96', '#', '\x3', '\x2', '\x2', '\x2', '\x97', 
@@ -1682,15 +1684,15 @@ public partial class CSharpParser : Parser {
 		'\x2', '\xAF', '\xAD', '\x3', '\x2', '\x2', '\x2', '\xAF', '\xB0', '\x3', 
 		'\x2', '\x2', '\x2', '\xB0', ')', '\x3', '\x2', '\x2', '\x2', '\xB1', 
 		'\xAF', '\x3', '\x2', '\x2', '\x2', '\xB2', '\xB3', '\x5', '\x30', '\x19', 
-		'\x2', '\xB3', '\xB4', '\a', '\x1F', '\x2', '\x2', '\xB4', '+', '\x3', 
-		'\x2', '\x2', '\x2', '\xB5', '\xB6', '\a', '\x1F', '\x2', '\x2', '\xB6', 
-		'-', '\x3', '\x2', '\x2', '\x2', '\xB7', '\xB8', '\x5', '\x30', '\x19', 
-		'\x2', '\xB8', '/', '\x3', '\x2', '\x2', '\x2', '\xB9', '\xBA', '\t', 
-		'\x2', '\x2', '\x2', '\xBA', '\x31', '\x3', '\x2', '\x2', '\x2', '\xBB', 
-		'\xBC', '\t', '\x3', '\x2', '\x2', '\xBC', '\x33', '\x3', '\x2', '\x2', 
-		'\x2', '\xBD', '\xBE', '\t', '\x4', '\x2', '\x2', '\xBE', '\x35', '\x3', 
-		'\x2', '\x2', '\x2', '\x13', '\x39', '=', 'L', 'S', '_', '\x63', 'h', 
-		'l', 'u', '\x81', '\x85', '\x8C', '\x95', '\x9A', '\x9E', '\xA4', '\xAF',
+		'\x2', '\xB3', '\xB4', '\a', ' ', '\x2', '\x2', '\xB4', '+', '\x3', '\x2', 
+		'\x2', '\x2', '\xB5', '\xB6', '\a', ' ', '\x2', '\x2', '\xB6', '-', '\x3', 
+		'\x2', '\x2', '\x2', '\xB7', '\xB8', '\x5', '\x30', '\x19', '\x2', '\xB8', 
+		'/', '\x3', '\x2', '\x2', '\x2', '\xB9', '\xBA', '\t', '\x2', '\x2', '\x2', 
+		'\xBA', '\x31', '\x3', '\x2', '\x2', '\x2', '\xBB', '\xBC', '\t', '\x3', 
+		'\x2', '\x2', '\xBC', '\x33', '\x3', '\x2', '\x2', '\x2', '\xBD', '\xBE', 
+		'\t', '\x4', '\x2', '\x2', '\xBE', '\x35', '\x3', '\x2', '\x2', '\x2', 
+		'\x13', '\x39', '=', 'L', 'S', '_', '\x63', 'h', 'l', 'u', '\x81', '\x85', 
+		'\x8C', '\x95', '\x9A', '\x9E', '\xA4', '\xAF',
 	};
 
 	public static readonly ATN _ATN =

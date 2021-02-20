@@ -97,6 +97,7 @@ return_type : type ;
 
 type
     : 'string[]'
+    | 'object'
     | 'void'
     ;
 
