@@ -19,6 +19,8 @@ namespace Tests {
             var compiler = new Compiler();
 
             compiler.Compile(source);
+            Assert.False(compiler.HasErrors);
+
             var assembly = compiler.Finish();
 
             Assert.NotNull(assembly);
@@ -42,6 +44,8 @@ namespace Tests {
             var compiler = new Compiler();
 
             compiler.Compile(source);
+            Assert.False(compiler.HasErrors);
+
             var assembly = compiler.Finish();
 
             Assert.NotNull(assembly);
@@ -67,6 +71,8 @@ namespace Tests {
             var compiler = new Compiler();
 
             compiler.Compile(source);
+            Assert.False(compiler.HasErrors);
+
             var assembly = compiler.Finish();
 
             Assert.NotNull(assembly);
