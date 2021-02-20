@@ -80,12 +80,18 @@ namespace CSC.Compiler {
             }
         }
 
+        public string[] Errors {
+            get {
+                return _errors.ToArray();
+            }
+        }
+
         void IAntlrErrorListener<int>.SyntaxError(TextWriter output, IRecognizer recognizer, int offendingSymbol, int line, int charPositionInLine, string msg, RecognitionException e) {
-            _errors.Add(output.ToString());
+            _errors.Add($"Lexical error ({line},{charPositionInLine}) - {msg}");
         }
 
         void IAntlrErrorListener<IToken>.SyntaxError(TextWriter output, IRecognizer recognizer, IToken offendingSymbol, int line, int charPositionInLine, string msg, RecognitionException e) {
-            _errors.Add(output.ToString());
+            _errors.Add($"Parser error ({line},{charPositionInLine}) - {msg}");
         }
     }
 }
