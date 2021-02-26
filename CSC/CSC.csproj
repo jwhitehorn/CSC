@@ -10,10 +10,6 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Antlr4.Runtime.Standard" Version="4.9.1" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Lokad.ILPack">
-      <HintPath>..\..\ILPack\src\obj\Debug\netcoreapp2.1\Lokad.ILPack.dll</HintPath>
-    </Reference>
+    <PackageReference Include="Lokad.ILPack" Version="0.1.6" />
   </ItemGroup>
 </Project>

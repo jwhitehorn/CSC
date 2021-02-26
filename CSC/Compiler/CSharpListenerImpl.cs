@@ -144,7 +144,7 @@ namespace CSC.Compiler {
         public void Finish(string filename) {
             var generator = new Lokad.ILPack.AssemblyGenerator();
 
-            generator.GenerateAssembly(_asmBuilder, filename, _entryPoint);
+            generator.GenerateAssembly(_asmBuilder, filename);//, _entryPoint);
         }
 
         public Assembly Finish() {
