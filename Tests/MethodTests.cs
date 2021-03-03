@@ -1,6 +1,7 @@
 ﻿using System;
 using Xunit;
 using CSC.Compiler;
+using System.Reflection;
 
 namespace Tests {
     public class MethodTests {
@@ -38,7 +39,7 @@ namespace Tests {
 
                 namespace CSC {
                     class Program {
-                        public object TestFunc(){
+                        object TestFunc(){
                             return null;
                         }
                     }
@@ -50,16 +51,24 @@ namespace Tests {
             compiler.Compile(source);
             var assembly = compiler.Finish();
 
+            Assert.False(compiler.HasErrors);
+
             Assert.NotNull(assembly);
 
             var programClassType = assembly.GetType("Program");
             Assert.NotNull(programClassType);
 
-            var funcInfo = programClassType.GetMember("TestFunc");
+            var funcInfo = programClassType.GetMember("TestFunc", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.InvokeMethod);
             Assert.NotNull(funcInfo);
 
-            var pClass = Activator.CreateInstance(programClassType);
-            //pClass.
+            var result = compiler.Run("Program", "TestFunc", null);
+
+            //var obj = Activator.CreateInstance(programClassType);
+            //var func = programClassType.GetMethod("TestFunc");
+            //var result = func.Invoke(obj, null);
+            //var flags =  BindingFlags.Public | BindingFlags.InvokeMethod | BindingFlags.Instance;
+            //var result = obj.GetType().InvokeMember("TestFunc", flags, null, obj, null);
+            Assert.Null(result);
             
         }
 
