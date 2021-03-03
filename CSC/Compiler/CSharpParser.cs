@@ -1003,24 +1003,58 @@ public partial class CSharpParser : Parser {
 	}
 
 	public partial class StatementContext : ParserRuleContext {
-		[System.Diagnostics.DebuggerNonUserCode] public Qualified_identifierContext qualified_identifier() {
-			return GetRuleContext<Qualified_identifierContext>(0);
-		}
-		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode STRING() { return GetToken(CSharpParser.STRING, 0); }
 		public StatementContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
 		public override int RuleIndex { get { return RULE_statement; } }
+	 
+		public StatementContext() { }
+		public virtual void CopyFrom(StatementContext context) {
+			base.CopyFrom(context);
+		}
+	}
+	public partial class EmptyStatementContext : StatementContext {
+		public EmptyStatementContext(StatementContext context) { CopyFrom(context); }
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override void EnterRule(IParseTreeListener listener) {
 			ICSharpListener typedListener = listener as ICSharpListener;
-			if (typedListener != null) typedListener.EnterStatement(this);
+			if (typedListener != null) typedListener.EnterEmptyStatement(this);
 		}
 		[System.Diagnostics.DebuggerNonUserCode]
 		public override void ExitRule(IParseTreeListener listener) {
 			ICSharpListener typedListener = listener as ICSharpListener;
-			if (typedListener != null) typedListener.ExitStatement(this);
+			if (typedListener != null) typedListener.ExitEmptyStatement(this);
+		}
+	}
+	public partial class FunctionCallStatementContext : StatementContext {
+		[System.Diagnostics.DebuggerNonUserCode] public Qualified_identifierContext qualified_identifier() {
+			return GetRuleContext<Qualified_identifierContext>(0);
+		}
+		[System.Diagnostics.DebuggerNonUserCode] public ITerminalNode STRING() { return GetToken(CSharpParser.STRING, 0); }
+		public FunctionCallStatementContext(StatementContext context) { CopyFrom(context); }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override void EnterRule(IParseTreeListener listener) {
+			ICSharpListener typedListener = listener as ICSharpListener;
+			if (typedListener != null) typedListener.EnterFunctionCallStatement(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override void ExitRule(IParseTreeListener listener) {
+			ICSharpListener typedListener = listener as ICSharpListener;
+			if (typedListener != null) typedListener.ExitFunctionCallStatement(this);
+		}
+	}
+	public partial class ReturnStatementContext : StatementContext {
+		public ReturnStatementContext(StatementContext context) { CopyFrom(context); }
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override void EnterRule(IParseTreeListener listener) {
+			ICSharpListener typedListener = listener as ICSharpListener;
+			if (typedListener != null) typedListener.EnterReturnStatement(this);
+		}
+		[System.Diagnostics.DebuggerNonUserCode]
+		public override void ExitRule(IParseTreeListener listener) {
+			ICSharpListener typedListener = listener as ICSharpListener;
+			if (typedListener != null) typedListener.ExitReturnStatement(this);
 		}
 	}
 
@@ -1033,6 +1067,7 @@ public partial class CSharpParser : Parser {
 			ErrorHandler.Sync(this);
 			switch (TokenStream.LA(1)) {
 			case T__1:
+				_localctx = new EmptyStatementContext(_localctx);
 				EnterOuterAlt(_localctx, 1);
 				{
 				State = 140;
@@ -1040,6 +1075,7 @@ public partial class CSharpParser : Parser {
 				}
 				break;
 			case IDENTIFIER:
+				_localctx = new FunctionCallStatementContext(_localctx);
 				EnterOuterAlt(_localctx, 2);
 				{
 				State = 141;
@@ -1055,6 +1091,7 @@ public partial class CSharpParser : Parser {
 				}
 				break;
 			case T__12:
+				_localctx = new ReturnStatementContext(_localctx);
 				EnterOuterAlt(_localctx, 3);
 				{
 				State = 147;

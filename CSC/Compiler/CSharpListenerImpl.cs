@@ -112,7 +112,7 @@ namespace CSC.Compiler {
             }
         }
 
-        public override void ExitStatement(CSharpParser.StatementContext ctx) {
+        public override void ExitFunctionCallStatement(CSharpParser.FunctionCallStatementContext ctx) {
             ILGenerator il = _methodBuilder.GetILGenerator();
 
             //il.Emit(OpCodes.Ldtoken, Label);
@@ -127,6 +127,12 @@ namespace CSC.Compiler {
             var methodInfo = typeof(Console).GetMethod("WriteLine", new Type[] { typeof(string) });
 
             il.EmitCall(OpCodes.Call, methodInfo, new Type[] { typeof(string) });
+        }
+
+        public override void ExitReturnStatement(CSharpParser.ReturnStatementContext ctx) {
+            // TODO: handle more than 'null' literals
+            ILGenerator il = _methodBuilder.GetILGenerator();
+            il.Emit(OpCodes.Ldnull);
         }
 
         public override void ExitMethod_declaration(CSharpParser.Method_declarationContext ctx) {

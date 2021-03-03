@@ -60,18 +60,18 @@ statement_list
     : statement+
     ;
 
-//~~~~~~~~~~~~~~
+// BEGIN HACKY GRAMMAR:
 
 statement
-    : ';'
-    | qualified_identifier '(' STRING ')' ';'
-    | 'return' 'null' ';'
+    : ';'                                       # EmptyStatement
+    | qualified_identifier '(' STRING ')' ';'   # FunctionCallStatement
+    | 'return' 'null' ';'                       # ReturnStatement
     ;
 
 STRING : '"' ~["]* '"' ;
 
 
-//~~~~~~~~~~~~~~
+// :END HACKY GRAMMAR
 
 method_header
     : method_modifier* 'partial'? return_type member_name

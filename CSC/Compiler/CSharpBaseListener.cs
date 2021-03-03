@@ -228,17 +228,47 @@ public partial class CSharpBaseListener : ICSharpListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitStatement_list([NotNull] CSharpParser.Statement_listContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="CSharpParser.statement"/>.
+	/// Enter a parse tree produced by the <c>EmptyStatement</c>
+	/// labeled alternative in <see cref="CSharpParser.statement"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterStatement([NotNull] CSharpParser.StatementContext context) { }
+	public virtual void EnterEmptyStatement([NotNull] CSharpParser.EmptyStatementContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="CSharpParser.statement"/>.
+	/// Exit a parse tree produced by the <c>EmptyStatement</c>
+	/// labeled alternative in <see cref="CSharpParser.statement"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitStatement([NotNull] CSharpParser.StatementContext context) { }
+	public virtual void ExitEmptyStatement([NotNull] CSharpParser.EmptyStatementContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by the <c>FunctionCallStatement</c>
+	/// labeled alternative in <see cref="CSharpParser.statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterFunctionCallStatement([NotNull] CSharpParser.FunctionCallStatementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>FunctionCallStatement</c>
+	/// labeled alternative in <see cref="CSharpParser.statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitFunctionCallStatement([NotNull] CSharpParser.FunctionCallStatementContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by the <c>ReturnStatement</c>
+	/// labeled alternative in <see cref="CSharpParser.statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterReturnStatement([NotNull] CSharpParser.ReturnStatementContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by the <c>ReturnStatement</c>
+	/// labeled alternative in <see cref="CSharpParser.statement"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitReturnStatement([NotNull] CSharpParser.ReturnStatementContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="CSharpParser.method_header"/>.
 	/// <para>The default implementation does nothing.</para>
