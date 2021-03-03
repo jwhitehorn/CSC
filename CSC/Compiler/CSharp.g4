@@ -65,6 +65,7 @@ statement_list
 statement
     : ';'
     | qualified_identifier '(' STRING ')' ';'
+    | 'return' 'null' ';'
     ;
 
 STRING : '"' ~["]* '"' ;
